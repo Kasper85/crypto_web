@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Space Theme */
+    --background: 240 30% 6%;
+    /* #0b0b14 - Very dark blue/black */
+    --foreground: 210 40% 98%;
+    /* #f0f4f8 */
+
+    --card: 240 25% 10%;
+    /* #131320 */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 270 100% 60%;
+    /* #9f21e3 - Neon Purple */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 180 100% 50%;
+    /* #00ffff - Cyan/Neon Blue */
+    --secondary-foreground: 240 30% 6%;
+
+    --muted: 240 20% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 270 100% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 15%;
+    --input: 240 20% 15%;
+    --ring: 270 100% 60%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Glassmorphism Utilities */
+.glass-card {
+  @apply bg-opacity-20 bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400;
+}
