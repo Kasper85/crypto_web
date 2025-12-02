@@ -21,7 +21,7 @@ const Hero = () => {
                     {/* Logo */}
                     <img src="/images/crypto.png" alt="Logo" className="h-12 w-12 rounded-xl shadow-lg shadow-primary/25" />
                     <div className="flex flex-col">
-                        <span className="font-musashi text-2xl leading-none tracking-wide">CRYPTO</span>
+                        <span className="font-musashi text-2xl leading-none tracking-wide">Dog Father</span>
                         <span className="text-xs text-gray-400 tracking-widest uppercase">Project</span>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const Hero = () => {
                 </div>
 
                 <h1 className="font-musashi text-7xl text-white md:text-9xl lg:text-[10rem] leading-none tracking-tight">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">CRYPTO</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">Dog Father</span>
                 </h1>
 
                 <p className="mt-6 text-lg text-gray-400 md:text-xl font-light max-w-2xl leading-relaxed">
