@@ -40,6 +40,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Kisoku Inu Extended Palette
+        kisoku: {
+          red: '#B33A3A',      // Rojo Samurai
+          navy: '#1A2B48',     // Azul Índigo
+          gold: '#F2C94C',     // Oro Prosperidad
+          sakura: '#FDE2E4',   // Rosa Sakura
+          beige: '#F5F5DC',    // Beige Pergamino
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -48,7 +56,8 @@ export default {
       },
       fontFamily: {
         sans: ["Outfit", "sans-serif"],
-        musashi: ["Outfit", "sans-serif"], // Keeping the class name for compatibility but mapping to Outfit
+        musashi: ["Noto Serif JP", "serif"], // Japanese traditional serif for headings
+        serif: ["Noto Serif JP", "serif"],
       },
     },
   },

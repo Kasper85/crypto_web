@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,41 +7,49 @@
 
 @layer base {
   :root {
-    /* Deep Space Theme */
-    --background: 240 30% 6%;
-    /* #0b0b14 - Very dark blue/black */
-    --foreground: 210 40% 98%;
-    /* #f0f4f8 */
+    /* Kisoku Inu - Japanese Samurai x Modern Crypto Theme */
+    --background: 218 45% 19%;
+    /* #1A2B48 - Deep Navy (Azul Índigo) */
+    --foreground: 40 23% 97%;
+    /* #FAF9F6 - Off-white */
 
-    --card: 240 25% 10%;
-    /* #131320 */
-    --card-foreground: 210 40% 98%;
+    --card: 218 40% 15%;
+    /* Darker navy for cards */
+    --card-foreground: 40 23% 97%;
 
-    --popover: 240 25% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 218 40% 15%;
+    --popover-foreground: 40 23% 97%;
 
-    --primary: 270 100% 60%;
-    /* #9f21e3 - Neon Purple */
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 52% 46%;
+    /* #B33A3A - Rojo Samurai (Rust Red) */
+    --primary-foreground: 40 23% 97%;
 
-    --secondary: 180 100% 50%;
-    /* #00ffff - Cyan/Neon Blue */
-    --secondary-foreground: 240 30% 6%;
+    --secondary: 45 87% 63%;
+    /* #F2C94C - Oro Prosperidad (Golden Yellow) */
+    --secondary-foreground: 218 45% 19%;
 
-    --muted: 240 20% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 218 30% 25%;
+    --muted-foreground: 40 10% 70%;
 
-    --accent: 270 100% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 352 93% 94%;
+    /* #FDE2E4 - Rosa Sakura */
+    --accent-foreground: 218 45% 19%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 23% 97%;
 
-    --border: 240 20% 15%;
-    --input: 240 20% 15%;
-    --ring: 270 100% 60%;
+    --border: 218 30% 25%;
+    --input: 218 30% 25%;
+    --ring: 0 52% 46%;
 
     --radius: 0.75rem;
+
+    /* Kisoku Inu Extended Colors */
+    --kisoku-red: #B33A3A;
+    --kisoku-navy: #1A2B48;
+    --kisoku-gold: #F2C94C;
+    --kisoku-sakura: #FDE2E4;
+    --kisoku-beige: #F5F5DC;
   }
 }
 
@@ -54,11 +63,131 @@
   }
 }
 
-/* Custom Glassmorphism Utilities */
+/* Custom Glassmorphism Utilities - Kisoku Inu Style */
 .glass-card {
-  @apply bg-opacity-20 bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  @apply bg-opacity-20 backdrop-blur-lg border shadow-xl;
+  background: rgba(26, 43, 72, 0.6);
+  border-color: rgba(242, 201, 76, 0.15);
 }
 
+.glass-card:hover {
+  border-color: rgba(242, 201, 76, 0.3);
+}
+
+/* Kisoku Inu Gradient - Red to Gold (Samurai to Prosperity) */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400;
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #B33A3A 0%, #F2C94C 100%);
+}
+
+/* Sakura Gradient for special elements */
+.sakura-gradient {
+  background: linear-gradient(135deg, #FDE2E4 0%, #F2C94C 50%, #B33A3A 100%);
+}
+
+/* Japanese paper texture effect */
+.paper-texture {
+  background-color: #F5F5DC;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Gold button style */
+.btn-gold {
+  @apply px-8 py-4 font-bold rounded-full transition-all duration-300;
+  background: linear-gradient(135deg, #F2C94C 0%, #D4A84B 100%);
+  color: #1A2B48;
+  box-shadow: 0 4px 20px rgba(242, 201, 76, 0.3);
+}
+
+.btn-gold:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(242, 201, 76, 0.5);
+}
+
+/* Red accent button */
+.btn-red {
+  @apply px-8 py-4 font-bold rounded-full transition-all duration-300;
+  background: linear-gradient(135deg, #B33A3A 0%, #8A2C2C 100%);
+  color: #FAF9F6;
+  box-shadow: 0 4px 20px rgba(179, 58, 58, 0.3);
+}
+
+.btn-red:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(179, 58, 58, 0.5);
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A2B48;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #B33A3A 0%, #F2C94C 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F2C94C;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(242, 201, 76, 0.3);
+  color: #F5F5DC;
 }
